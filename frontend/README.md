@@ -1,32 +1,29 @@
-# React + TypeScript + Vite
+# Grounded
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Grounded is a small-step adventure discovery app: find an outdoor idea that fits
+your mood, available time, and budget, then save it or make it your next story.
+The sample adventures are general activity ideas, not verified local listings.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```sh
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Use `npm run build` for a production build and `npm run lint` to lint the
+frontend.
+
+## Pages
+
+- `/` — welcoming home, mood picker, quick filters, and a rotating tiny adventure
+- `/discover` — searchable adventures with time and budget filters
+- `/discover/:category` — shareable pages for the seven exploration moods
+- `/adventure/:id` — activity details, save, start, and completion actions
+- `/plan` — a quick personalized adventure finder
+- `/saved` — locally saved adventures
+- `/community` — low-pressure ideas to share with someone
+- `/rewards` — completed adventures, XP, and earned badges
+
+Saved adventures, planning preferences, started activities, and completions are
+stored in this browser. Each completed adventure awards 50 XP once.
